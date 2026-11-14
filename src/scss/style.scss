@@ -1,0 +1,29 @@
+// ==================================================
+// Main stylesheet
+// Підключаємо все в правильному порядку
+// ==================================================
+
+// 1. Libs (normalize тощо)
+@use "libs/modern-normalize";
+
+// 2. Base
+@use "base/variables" as *;
+@use "base/mixins" as *;
+@use "base/basic";
+
+// 3. UI-компоненти
+@use "ui/buttons";
+@use "ui/titles";
+@use "ui/animations";
+
+// 4. Blocks / Sections
+@use "blocks/header";
+@use "blocks/footer";
+@use "blocks/top";
+@use "blocks/features";
+@use "blocks/game";
+@use "blocks/buy";
+@use "blocks/equipment";
+@use "blocks/promo";
+@use "blocks/accessories";
+@use "blocks/contacts";

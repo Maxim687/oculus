@@ -1,0 +1,57 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.top {
+  min-height: calc(100vh - 81px);
+  background-image: url("/src/assets/img/top-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  &__title {
+    padding-top: 15%;
+    font-size: 96px;
+    line-height: 115px;
+    margin-bottom: 10px;
+  }
+  &__subtitle {
+    font-size: $fs-4xl;
+    margin-bottom: 5px;
+    line-height: 43px;
+  }
+  &__text {
+    font-size: 13px;
+  }
+  &__btn {
+    margin: 50px 0 10px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .top {
+    &__title {
+      font-size: 66px;
+      line-height: 50px;
+      padding-top: 30%;
+    }
+    &__subtitle {
+      font-size: $fs-2xl;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .top {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .top {
+    &__title {
+      font-size: 48px;
+    }
+    &__subtitle {
+      font-size: $fs-xl;
+    }
+  }
+}

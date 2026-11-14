@@ -1,0 +1,54 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.promo {
+  margin-bottom: 100px;
+  position: relative;
+  &__inner {
+    min-height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+  }
+  &__btn {
+    transition: transform 0.3s;
+    text-transform: uppercase;
+    font-weight: $fw-bold;
+    color: $white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 80px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    background: var(
+      --gradient,
+      linear-gradient(
+        180deg,
+        rgba(188, 16, 216, 1) 0%,
+        rgba(80, 0, 250, 0.93) 100%
+      )
+    );
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+@media screen and (max-width: 765px) {
+  .promo {
+    margin-bottom: 70px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .promo__inner {
+    min-height: 400px;
+  }
+}

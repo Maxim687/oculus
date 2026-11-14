@@ -1,0 +1,126 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.game {
+  padding-bottom: 80px;
+  &__title {
+    margin-bottom: 50px;
+  }
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  &__descr {
+    padding-right: 10px;
+    &-title {
+      margin-bottom: 10px;
+    }
+    &-text {
+      margin-bottom: 24px;
+    }
+  }
+  &__link {
+    @include gradient-text;
+    display: inline-block;
+    font-weight: $fw-bold;
+    text-transform: uppercase;
+    padding: 16px 12px;
+    min-width: 225px;
+    text-align: center;
+    border: 1px solid transparent;
+    border-image: var(
+        --gradient,
+        linear-gradient(
+          180deg,
+          rgba(188, 16, 216, 1) 0%,
+          rgba(80, 0, 250, 0.93) 100%
+        )
+      )
+      1;
+    position: relative;
+    z-index: 1;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+    // Створюємо шар з градієнтним фоном під текстом
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: var(
+        --gradient,
+        linear-gradient(
+          180deg,
+          rgba(188, 16, 216, 1) 0%,
+          rgba(80, 0, 250, 0.93) 100%
+        )
+      );
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(188, 16, 216, 0.35);
+      -webkit-text-fill-color: $white;
+      color: $white;
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+  &__item {
+    border: 1px solid transparent;
+    border-image: var(
+        --gradient,
+        linear-gradient(
+          180deg,
+          rgba(188, 16, 216, 1) 0%,
+          rgba(80, 0, 250, 0.93) 100%
+        )
+      )
+      1;
+    padding: 15px 15px 18px 15px;
+    display: flex;
+    flex-direction: column;
+    &-img {
+      margin-bottom: 10px;
+    }
+    &-title {
+      font-size: $fs-2xl;
+      margin-bottom: 10px;
+      color: $black;
+    }
+    &-text {
+      margin-bottom: 30px;
+    }
+    &-link {
+      @include gradient-text;
+      margin-top: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .game {
+    &__descr {
+      padding-right: 15px;
+    }
+    &__inner {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .game {
+    padding-bottom: 70px;
+    &__inner {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 25px;
+    }
+  }
+}

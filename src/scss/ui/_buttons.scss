@@ -1,0 +1,62 @@
+// ==================================================
+// Buttons
+// ==================================================
+
+@use "sass:color";
+@use "../base/variables" as *;
+
+.buy-btn {
+  cursor: pointer;
+  font-weight: $fw-bold;
+  background: var(
+    --gradient,
+    linear-gradient(
+      180deg,
+      rgba(187.76, 16.18, 215.69, 1) 0%,
+      rgba(79.9, 0, 249.69, 0.93) 100%
+    )
+  );
+  display: flex;
+  padding: 0;
+  text-transform: uppercase;
+  padding: 1px;
+  &__text {
+    text-transform: uppercase;
+    color: $white;
+    padding: 20px 110px;
+  }
+  &__price {
+    background-color: rgb(230, 228, 229);
+    padding: 20px 105px;
+  }
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 10px 25px rgba(188, 16, 216, 0.45),
+      0 4px 15px rgba(80, 0, 250, 0.35);
+    filter: brightness(1.1);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .top__btn {
+    flex-direction: column;
+    margin: 30px auto 10px auto !important;
+  }
+  .buy__button {
+    flex-direction: column;
+    width: 90%;
+  }
+  .buy-btn {
+    width: 100%;
+    &__text,
+    &__price {
+      padding: 15px;
+    }
+  }
+}

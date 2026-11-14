@@ -1,0 +1,29 @@
+// ==================================================
+// Titles / Headings
+// ==================================================
+
+@use "../base/variables" as *;
+
+.subtitle {
+  color: $grey;
+  font-weight: $fw-normal;
+  font-size: $fs-base;
+  text-transform: uppercase;
+}
+
+.title-gradient {
+  text-transform: uppercase;
+  font-size: 36px;
+  background: var(
+    --gradient,
+    linear-gradient(
+      180deg,
+      rgba(187.76, 16.18, 215.69, 1) 0%,
+      rgba(79.9, 0, 249.69, 0.93) 100%
+    )
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 43px;
+}

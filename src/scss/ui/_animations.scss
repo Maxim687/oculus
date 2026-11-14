@@ -1,0 +1,19 @@
+@keyframes line-text {
+  from {
+    transform: translateX(120%);
+    transform-origin: left center;
+  }
+  to {
+    transform: translateX(-120%);
+    transform-origin: right center;
+  }
+}
+
+@keyframes oculus-img {
+  from {
+    transform: translateY(5%);
+  }
+  to {
+    transform: translateY(-5%);
+  }
+}

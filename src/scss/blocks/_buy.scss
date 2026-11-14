@@ -1,0 +1,48 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.buy {
+  padding-bottom: 110px;
+  text-align: center;
+  position: relative;
+  overflow-x: hidden;
+  &__img {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    animation: oculus-img 2s ease-in-out infinite alternate;
+  }
+  &__button {
+    margin: 0 auto;
+    & .buy-btn__price {
+      background-color: #fff;
+    }
+  }
+  &__bg {
+    @include gradient-text;
+    font-weight: $fw-bold;
+    font-size: 400px;
+    line-height: 400px;
+    opacity: 0.1;
+    position: absolute;
+    z-index: -1;
+    animation: line-text 5s linear 0s infinite;
+  }
+  &__text {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .buy {
+    padding: 0 15px 70px 15px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .buy {
+    &__bg {
+      top: -50px;
+    }
+  }
+}
