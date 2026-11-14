@@ -16,6 +16,7 @@
     "postcss": "^8.4.49",
     "postcss-pxtorem": "^6.1.0",
     "sass": "^1.81.0",
+    "sharp": "^0.35.5",
     "svgo": "^3.3.2",
     "vite": "^6.0.0",
     "vite-plugin-html": "^3.2.2",
